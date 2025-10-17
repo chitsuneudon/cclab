@@ -5,38 +5,384 @@ Project A: Generative Creatures
 CCLaboratories Biodiversity Atlas 
 */
 
-let x;
-let y;
-let R = 100;
-let vNumber = 200;
-let smoothness = 0.5;
-
+var angle1;
+var angle2;
+let x = -85;
+let x2 = 85;
 function setup() {
-    let canvas = createCanvas(800, 500);
-    canvas.id("p5-canvas");
-    canvas.parent("p5-canvas-container");
+  createCanvas(800, 500);
 }
 
 function draw() {
-    background(0);
-    noStroke();
-    push();
-    translate(width / 2, height / 2);
-    rotate(sin(frameCount * 0.01));
-    beginShape();
-    for (let i = 0; i < TWO_PI; i += TWO_PI / vNumber) {
-        let offset = noise(
-            smoothness * sin(i),
-            smoothness * cos(i),
-            frameCount * 0.01
-        );
-        offset = map(offset, 0, 1, -R * 0.2, R * 0.2);
-        let radius = R + offset;
-        x = radius * cos(i);
-        y = radius * sin(i);
-        curveVertex(x, y);
-    }
-    endShape(CLOSE);
-    pop();
-}
+  background(220);
+  
+  angleMode(DEGREES)
+  
+  //fox
+  translate(400, 220)
+  stroke(176, 168, 167)
+  
+//   tail
+  push()
+    translate(-45, 150)
+    rotate(angle1)
+    // fill(255, 0, 0)
+    // circle(0, 0, 5)
+    // circle(-37, -9, 5)
+    // circle(-64, -23, 5)
+    // circle(-80, -33, 5)
+    // circle(-89, -50, 5)
+    // circle(-98, -71, 5)
+    // circle(-99, -93, 5)
+    // circle(-96, -115, 5)
+    // circle(-91, -140, 5)
+    // circle(-116, -130, 5)
+    // circle(-129, -113, 5)
+    // circle(-136, -92, 5)
+    // circle(-141, -96, 5)
+    // circle(-144, -101, 5)
+    // circle(-145, -97, 5)
+    // circle(-143, -92, 5)
+    // circle(-142, -88, 5)
+    // circle(-143, -80, 5)
+    // circle(-146, -86, 5)
+    // circle(-145, -80, 5)
+    // circle(-148, -68, 5)
+    // circle(-147, -47, 5)
+    // circle(-139, -28, 5)
+    // circle(-129, -18, 5)
+    // circle(-111, -8, 5)
+    // circle(-87, -2, 5)
+    // circle(-57, 1, 5)
+    // circle(-36, 2, 5)
+    beginShape()
+      curveVertex(0, 0)
+      curveVertex(0, 0)
+      curveVertex(0, 0)
+      curveVertex(-37, -9)
+      curveVertex(-64, -23)
+      curveVertex(-80, -33)
+      curveVertex(-89, -50)
+      curveVertex(-98, -71)
+      curveVertex(-99, -93)
+      curveVertex(-96, -115)
+      curveVertex(-91, -140)
+      curveVertex(-116, -130)
+      curveVertex(-129, -117)
+      curveVertex(-137, -103)
+      curveVertex(-141, -94)
+      curveVertex(-144, -102)
+      curveVertex(-145, -92)
+      curveVertex(-145, -88)
+      curveVertex(-143, -80)
+      curveVertex(-149, -87)
+      curveVertex(-149, -80)
+      curveVertex(-148, -68)
+      // curveVertex(-147, -47)
+      curveVertex(-138, -28)
+      // curveVertex(-125, -18)
+      curveVertex(-111, -8)
+      curveVertex(-87, -2)
+      curveVertex(-57, 1)
+      curveVertex(-36, 2)
+      curveVertex(0, 0)
+      curveVertex(0, 0)
+    endShape()
+    fill(235, 64, 52)
+    beginShape()
+      curveVertex(-98, -71)
+      curveVertex(-99, -93)
+      curveVertex(-96, -115)
+      curveVertex(-91, -140)
+      curveVertex(-116, -130)
+      curveVertex(-129, -117)
+      curveVertex(-137, -103)
+      curveVertex(-141, -94)
+      curveVertex(-144, -102)
+      curveVertex(-145, -92)
+      curveVertex(-145, -88)
+      curveVertex(-143, -80)
+      curveVertex(-149, -87)
+      curveVertex(-149, -80)
+      curveVertex(-148, -68)
+      curveVertex(-139, -54)
+      curveVertex(-132, -64)
+      curveVertex(-124, -55)
+      curveVertex(-116, -69)
+      curveVertex(-110, -57)
+      curveVertex(-105, -70)
+      curveVertex(-95, -60)
+      curveVertex(-95, -60)
+    endShape()
+  pop()
+  
+  //body
+  push()
+    translate(0, 200)
+    // fill(255, 0 , 0)
+    // circle(-50, -150, 5)
+    // circle(-66, -122, 5)
+    // circle(-75, -95, 5)
+    // circle(-82, -60, 5)
+    // circle(-80, -25, 5)
+    // circle(-46, -7, 5)
+    // circle(0, 0, 5)
+    // circle(66, -122, 5)
+    // circle(50, -150, 5)
+    fill(255)
+    beginShape()
+      curveVertex(-50, -150)
+      curveVertex(-66, -122)
+      curveVertex(-75, -95)
+      curveVertex(-82, -60)
+      curveVertex(-74, -30)
+      curveVertex(-46, -7)
+      curveVertex(0, 0)
+      curveVertex(46, -7)      
+      curveVertex(74, -30)
+      curveVertex(82, -60)
+      curveVertex(75, -95)
+      curveVertex(66, -122)
+      curveVertex(50, -150)
+      curveVertex(21, -150)
+      curveVertex(0, -153)
+      curveVertex(-21, -150)
+    endShape(CLOSE)
+  pop()
+  
+  //head
+  ellipse (0, 0, 180, 140)
+  
+//   blush
+  push()
+    noStroke()
+    fill(255, 224, 234)
+    ellipse(-49, 25, 25, 10)
+    ellipse(49, 25, 25, 10)
+  pop()
+  //   face fur
+//   left
+  push()
+    translate(-82, 15)
+    // fill(255, 0, 0)
+    // circle(-5, -10, 2)
+    // // circle(-17, -6, 2)
+    // circle(-11, -6, 2)
+    // circle(-16, -1, 2)
+    // circle(-10, -1, 2)
+    // circle(-14, 5, 2)
+    // circle(-6, 2, 2)
+    // circle(-8, 6, 2)
+    // circle(-12, 10, 2)
+    // circle(-1, 12, 2)
+    // fill(255)
+    beginShape()
+      curveVertex(-7, -12)
+      curveVertex(-7, -12)
+      curveVertex(-14, -7)
+      curveVertex(-17, -4)
+      curveVertex(-10, -1)
+      curveVertex(-16, 3)
+      curveVertex(-7, 4)
+      curveVertex(-8, 6)
+      curveVertex(-12, 10)
+      curveVertex(-7, 10)
+      curveVertex(-1, 12)
+      curveVertex(-1, 12)
+    endShape()
+  pop()
+//   right
+  push()
+    translate(82, 15)
+    beginShape()
+      curveVertex(7, -12)
+      curveVertex(7, -12)
+      curveVertex(14, -7)
+      curveVertex(17, -4)
+      curveVertex(10, -1)
+      curveVertex(16, 3)
+      curveVertex(7, 4)
+      curveVertex(8, 6)
+      curveVertex(12, 10)
+      curveVertex(7, 10)
+      curveVertex(1, 12)
+      curveVertex(1, 12)
+    endShape()
+  pop()
+  
+  //ears
 
+  push()
+    rotate(angle1)
+    noStroke()
+    // translate(445, 170)
+    fill(255)
+     let leftear = triangle(x, -90, -85, -24, -35, -60)
+     fill(235, 64, 52)
+     let leftear1 = triangle(-86, -19, x, -90, -61, -43 )
+
+  pop()
+  
+  push()
+    rotate(angle2)
+    noStroke()
+    fill(255)
+    let rightear = triangle(x2, -90, 35, -60, 85, -27)
+    fill(235, 64, 52)
+    let leftear2 = triangle(86, -19, x2, -90, 61, -43 )
+  pop()
+  //eyes
+  
+  push()
+    noStroke()
+    translate(-45, 5)
+    fill(252, 58, 61)
+    rotate(20)
+    ellipse(0, 0, 20, 25)
+    fill(255)
+    circle(1, -2, 23)
+  pop()
+  
+  push()
+    noStroke()
+    translate(45, 5)
+    fill(252, 58, 61)
+    rotate(300)
+    ellipse(0, 0, 20, 25)
+    fill(255)
+    circle(1, -2, 23)
+  pop()
+  
+  push()
+    noStroke()
+    translate(-40, 0)
+    rotate(300)
+    fill(252, 58, 61)
+    ellipse(0, -3, 25, 20)
+    fill(0)
+    ellipse(0, 0, 25, 20)
+  pop()
+  
+  push()
+    noStroke()
+    translate(40, 0)
+    rotate(60)
+    fill(252, 58, 61)
+    ellipse(0, -3, 25, 20)
+    fill(0)
+    ellipse(0, 0, 25, 20)
+  pop()
+  
+// nose
+  push()
+    translate(0, 15)
+    fill(0)
+    beginShape()
+    curveVertex(-3, 13)
+    curveVertex(0,  14)
+    curveVertex(3, 13)
+    curveVertex(9, 9)
+    // curveVertex(10, 8)
+    // curveVertex(12, 5)
+    curveVertex(8, 3)
+    curveVertex(-8, 3)
+    // curveVertex(-12, 5)
+    // curveVertex(-10, 8)
+    curveVertex(-9, 9)
+    // curveVertex(0, 20)
+    endShape(CLOSE)
+  pop()
+  
+  // paws
+  push()
+    translate(0, 200)
+    // fill(255, 0 , 0)
+    // circle(0, -40, 5)
+    // circle(-9, -1, 5)
+    // circle(-32, -2, 5)
+    // circle(-41, -35, 5)
+    // circle(-27, -8, 5)
+    fill(255)
+    // noFill()
+  
+//  left paw 
+    beginShape()
+      curveVertex(0, -35)
+      curveVertex(0, -35)
+      curveVertex(-9, -1)
+      curveVertex(-32, -2)
+      curveVertex(-41, -35)
+      curveVertex(-41, -35)
+    endShape()
+    beginShape()
+      curveVertex(-29, -8)
+      curveVertex(-29, -8)
+      curveVertex(-28, -4)
+      curveVertex(-26, 1)
+      curveVertex(-26, 1)
+    endShape()
+    beginShape()
+      curveVertex(-20, -8)
+      curveVertex(-20, -8)
+      curveVertex(-19, 2)
+      curveVertex(-19, 2)
+    endShape()
+    beginShape()
+      curveVertex(-12, -8)
+      curveVertex(-12, -8)
+      curveVertex(-12, -4)
+      curveVertex(-13, 1)
+      curveVertex(-13, 1)
+    endShape()
+  
+  
+// right paw  
+  beginShape()
+      curveVertex(0, -35)
+      curveVertex(0, -35)
+      curveVertex(9, -1)
+      curveVertex(32, -2)
+      curveVertex(41, -40)
+      curveVertex(41, -40)
+    endShape()
+    beginShape()
+      curveVertex(29, -8)
+      curveVertex(29, -8)
+      curveVertex(28, -4)
+      curveVertex(26, 1)
+      curveVertex(26, 1)
+    endShape()
+    beginShape()
+      curveVertex(20, -8)
+      curveVertex(20, -8)
+      curveVertex(19, 2)
+      curveVertex(19, 2)
+    endShape()
+    beginShape()
+      curveVertex(12, -8)
+      curveVertex(12, -8)
+      curveVertex(12, -4)
+      curveVertex(13, 1)
+      curveVertex(13, 1)
+    endShape()
+  pop()
+  
+
+
+  
+  console.log(mouseX-400, mouseY-220, x)
+}
+function mousePressed(){
+  angle1 = 0
+  if(x >= -85 || x2<=85){
+    angle1 = 350
+    angle2 = 10
+    x2 = 100
+    x = -100
+  } else if(x<=-100 || x2>=100){
+    angle1 = 0
+    x = -85
+    angle2 = 0
+    x2 = 85
+  }
+}
