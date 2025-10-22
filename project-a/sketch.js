@@ -5,56 +5,209 @@ Project A: Generative Creatures
 CCLaboratories Biodiversity Atlas 
 */
 
+let leftearX = -70
+let leftearY = -60
+let leftearradius = 80
+let rightearX = 70
+let rightearY = -60
+let rightearradius = 80
 var angle1;
 var angle2;
 let x = -85;
 let x2 = 85;
+let tailamplitude = 3
+let cloudX = 100
+let cloudY = 80
+let cloudX2 = 300
+let cloudY2 = 120
+let cloudX3 = 500
+let cloudY3 = 70
+let cloudX4 = 700
+let cloudY4 = 100
+let speed = 3/100
+let earamplitude = 3
+
+
 function setup() {
+  
   createCanvas(800, 500);
+  // fill(255, 0 , 0)
+  // circle(0, 0, 5)
+  // circle(20, -30, 5)
+  // circle(40, 0, 5)
 }
 
 function draw() {
-  background(220);
-  
   angleMode(DEGREES)
+  background(195, 235, 247);
+push()
+  translate(0, 400)
+  for(let x = -6; x <= width; x +=27){
+    stroke(105, 135, 109)
+    strokeWeight(2)
+    fill(151, 191, 156)
+    triangle(x, 0, x + 15, -15, x + 30, 0)
+  }
+    noStroke()
+    rect(0, -1, 800, 110)
+  pop()
+push()
+  translate(0, 440)
+  for(let x = 10; x <= 100; x +=24){
+    stroke(105, 135, 109)
+    strokeWeight(2)
+    fill(151, 191, 156)
+    triangle(x, 0, x + 13, -13, x + 26, 0)
+  }
+    noStroke()
+    rect(0, -1, 800, 110)
+pop()
+push()
+  translate(250, 440)
+  for(let x = 10; x <= 150; x +=24){
+    stroke(105, 135, 109)
+    strokeWeight(2)
+    fill(151, 191, 156)
+    triangle(x, 0, x + 13, -13, x + 26, 0)
+  }
+    noStroke()
+    rect(0, -1, 800, 110)
+pop()
+push()
+  translate(600, 440)
+  for(let x = 10; x <= 100; x +=24){
+    stroke(105, 135, 109)
+    strokeWeight(2)
+    fill(151, 191, 156)
+    triangle(x, 0, x + 13, -13, x + 26, 0)
+  }
+    noStroke()
+    rect(0, -1, 800, 110)
+pop()
+push()
+  translate(125, 490)
+  for(let x = 10; x <= 100; x +=24){
+    stroke(105, 135, 109)
+    strokeWeight(2)
+    fill(151, 191, 156)
+    triangle(x, 0, x + 13, -13, x + 26, 0)
+  }
+    noStroke()
+    rect(0, -1, 800, 110)
+pop()
+push()
+  translate(475, 490)
+  for(let x = 10; x <= 100; x +=24){
+    stroke(105, 135, 109)
+    strokeWeight(2)
+    fill(151, 191, 156)
+    triangle(x, 0, x + 13, -13, x + 26, 0)
+  }
+    noStroke()
+    rect(0, -1, 800, 110)
+pop()
+push()
+  translate(125, 750)
+  for(let x = 10; x <= 100; x +=24){
+    stroke(105, 135, 109)
+    strokeWeight(2)
+    fill(151, 191, 156)
+    triangle(x, 0, x + 13, -13, x + 26, 0)
+  }
+    noStroke()
+    rect(0, -1, 800, 110)
+pop()
   
+//   clouds
+push()
+  // translate(100, 80)
+  translate(cloudX, cloudY)
+  stroke(130, 130, 130)
+  fill(181, 181, 181)
+  circle(-52.5, -20, 50)
+  circle(-17.5, -40, 50)
+  circle(17.5, -40, 50)
+  circle(52.5, -20, 50)
+  rect(-52.5, -20, 105, 25)
+  noStroke()
+  ellipse(0, -25, 125, 50)
+  circle(-48, -10, 30)
+  circle(48, -10, 30)
+  circle(0, -50, 17)
+  stroke(0)
+  noFill()
+  // rect(-80, -65, 160, 70)
+  // rect(-80, -65, 320, 140)
+pop()
+push()
+  // translate(100, 80)
+  translate(cloudX2, cloudY2)
+  stroke(130, 130, 130)
+  fill(181, 181, 181)
+  circle(-52.5, -20, 50)
+  circle(-17.5, -40, 50)
+  circle(17.5, -40, 50)
+  circle(52.5, -20, 50)
+  rect(-52.5, -20, 105, 25)
+  noStroke()
+  ellipse(0, -25, 125, 50)
+  circle(-48, -10, 30)
+  circle(48, -10, 30)
+  circle(0, -50, 17)
+  stroke(0)
+  noFill()
+  // rect(-80, -65, 160, 70)
+  // rect(-80, -65, 320, 140)
+pop()
+push()
+  // translate(100, 80)
+  translate(cloudX3, cloudY3)
+  stroke(130, 130, 130)
+  fill(181, 181, 181)
+  circle(-52.5, -20, 50)
+  circle(-17.5, -40, 50)
+  circle(17.5, -40, 50)
+  circle(52.5, -20, 50)
+  rect(-52.5, -20, 105, 25)
+  noStroke()
+  ellipse(0, -25, 125, 50)
+  circle(-48, -10, 30)
+  circle(48, -10, 30)
+  circle(0, -50, 17)
+  stroke(0)
+  noFill()
+  // rect(-80, -65, 160, 70)
+  // rect(-80, -65, 320, 140)
+pop()
+push()
+  // translate(100, 80)
+  translate(cloudX4, cloudY4)
+  stroke(130, 130, 130)
+  fill(181, 181, 181)
+  circle(-52.5, -20, 50)
+  circle(-17.5, -40, 50)
+  circle(17.5, -40, 50)
+  circle(52.5, -20, 50)
+  rect(-52.5, -20, 105, 25)
+  noStroke()
+  ellipse(0, -25, 125, 50)
+  circle(-48, -10, 30)
+  circle(48, -10, 30)
+  circle(0, -50, 17)
+  stroke(0)
+  noFill()
+  // rect(-80, -65, 160, 70)
+  // rect(-80, -65, 320, 140)
+pop()  
   //fox
-  translate(400, 220)
+  translate(400, 250)
   stroke(176, 168, 167)
   
 //   tail
   push()
+  let tailanimate = sin(frameCount * tailamplitude) * 9
     translate(-45, 150)
-    rotate(angle1)
-    // fill(255, 0, 0)
-    // circle(0, 0, 5)
-    // circle(-37, -9, 5)
-    // circle(-64, -23, 5)
-    // circle(-80, -33, 5)
-    // circle(-89, -50, 5)
-    // circle(-98, -71, 5)
-    // circle(-99, -93, 5)
-    // circle(-96, -115, 5)
-    // circle(-91, -140, 5)
-    // circle(-116, -130, 5)
-    // circle(-129, -113, 5)
-    // circle(-136, -92, 5)
-    // circle(-141, -96, 5)
-    // circle(-144, -101, 5)
-    // circle(-145, -97, 5)
-    // circle(-143, -92, 5)
-    // circle(-142, -88, 5)
-    // circle(-143, -80, 5)
-    // circle(-146, -86, 5)
-    // circle(-145, -80, 5)
-    // circle(-148, -68, 5)
-    // circle(-147, -47, 5)
-    // circle(-139, -28, 5)
-    // circle(-129, -18, 5)
-    // circle(-111, -8, 5)
-    // circle(-87, -2, 5)
-    // circle(-57, 1, 5)
-    // circle(-36, 2, 5)
+    rotate(tailanimate)
     beginShape()
       curveVertex(0, 0)
       curveVertex(0, 0)
@@ -152,7 +305,7 @@ function draw() {
   
   //head
   ellipse (0, 0, 180, 140)
-  
+    
 //   blush
   push()
     noStroke()
@@ -164,18 +317,6 @@ function draw() {
 //   left
   push()
     translate(-82, 15)
-    // fill(255, 0, 0)
-    // circle(-5, -10, 2)
-    // // circle(-17, -6, 2)
-    // circle(-11, -6, 2)
-    // circle(-16, -1, 2)
-    // circle(-10, -1, 2)
-    // circle(-14, 5, 2)
-    // circle(-6, 2, 2)
-    // circle(-8, 6, 2)
-    // circle(-12, 10, 2)
-    // circle(-1, 12, 2)
-    // fill(255)
     beginShape()
       curveVertex(-7, -12)
       curveVertex(-7, -12)
@@ -209,28 +350,35 @@ function draw() {
       curveVertex(1, 12)
     endShape()
   pop()
+  earamplitude = constrain(earamplitude, 3, 20)
+  let dleft = dist(mouseX, mouseY, 330, 190)
+  let dright = dist(mouseX, mouseY, 470, 190)
+      if (mouseIsPressed ===  true){
+        if(dleft < 80 && dright > 80){
+    earamplitude = earamplitude + speed
+        }
+      }else{
+        if(earamplitude >= 3){
+     earamplitude = 3
+        }
+        if (earamplitude <= 3){
+          earamplitude = 3
+        }
+  }
   
-  //ears
-
+  
   push()
-    rotate(angle1)
-    noStroke()
-    // translate(445, 170)
-    fill(255)
-     let leftear = triangle(x, -90, -85, -24, -35, -60)
-     fill(235, 64, 52)
-     let leftear1 = triangle(-86, -19, x, -90, -61, -43 )
-
+    let rotateAnimate = sin(frameCount * earamplitude) * 5
+    rotate(rotateAnimate)
+    drawLeftear()
   pop()
   
   push()
-    rotate(angle2)
-    noStroke()
-    fill(255)
-    let rightear = triangle(x2, -90, 35, -60, 85, -27)
-    fill(235, 64, 52)
-    let leftear2 = triangle(86, -19, x2, -90, 61, -43 )
+    rotate(-rotateAnimate)
+    drawRightear()
   pop()
+  
+  
   //eyes
   
   push()
@@ -296,14 +444,7 @@ function draw() {
   // paws
   push()
     translate(0, 200)
-    // fill(255, 0 , 0)
-    // circle(0, -40, 5)
-    // circle(-9, -1, 5)
-    // circle(-32, -2, 5)
-    // circle(-41, -35, 5)
-    // circle(-27, -8, 5)
     fill(255)
-    // noFill()
   
 //  left paw 
     beginShape()
@@ -367,22 +508,76 @@ function draw() {
     endShape()
   pop()
   
-
-
   
-  console.log(mouseX-400, mouseY-220, x)
+// push()
+//   noFill()
+//   stroke(0)
+//   ellipse(leftearX, leftearY, leftearradius)
+//   ellipse(rightearX, rightearY, rightearradius)
+//   fill(255, 0, 0)
+//   circle(rightearX, rightearY, 5)
+// pop()
+  
+    console.log(mouseX, mouseY, speed, earamplitude)
+
 }
+
+function drawLeftear(){
+    // rotate(angle1)
+    noStroke()
+    // translate(445, 170)
+    fill(255)
+     let leftear = triangle(x, -90, -83, -24, -35, -60)
+     fill(235, 64, 52)
+     let leftear1 = triangle(-85, -19, x, -90, -61, -43 )
+     }
+function drawRightear(){
+    noStroke()
+  fill(255)
+    let rightear = triangle(x2, -90, 35, -60, 83, -27)
+    fill(235, 64, 52)
+    let leftear2 = triangle(85, -19, x2, -90, 61, -43 )
+}
+
 function mousePressed(){
-  angle1 = 0
-  if(x >= -85 || x2<=85){
-    angle1 = 350
-    angle2 = 10
-    x2 = 100
-    x = -100
-  } else if(x<=-100 || x2>=100){
-    angle1 = 0
-    x = -85
-    angle2 = 0
-    x2 = 85
-  }
+  if(mouseX>cloudX-80){
+    if(mouseX<cloudX+80){
+      if(mouseY>cloudY-66){
+        if(mouseY<cloudY+5){
+        cloudX = random(80, 250)
+        cloudY = random(50, 150)
+          }
+        }
+      }
+    }
+    if(mouseX>cloudX2-80){
+    if(mouseX<cloudX2+80){
+      if(mouseY>cloudY2-66){
+        if(mouseY<cloudY2+5){
+        cloudX2 = random(250, 500)
+        cloudY2 = random(50, 150)
+          }
+        }
+      }
+    }
+    if(mouseX>cloudX3-80){
+    if(mouseX<cloudX3+80){
+      if(mouseY>cloudY3-66){
+        if(mouseY<cloudY3+5){
+        cloudX3 = random(500, 700)
+        cloudY3 = random(50, 150)
+          }
+        }
+      }
+    }
+  if(mouseX>cloudX4-80){
+    if(mouseX<cloudX4+80){
+      if(mouseY>cloudY4-66){
+        if(mouseY<cloudY4+5){
+        cloudX4 = random(600, 800)
+        cloudY4 = random(50, 150)
+          }
+        }
+      }
+    }
 }
