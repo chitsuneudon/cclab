@@ -350,10 +350,17 @@ pop()
   let dleft = dist(mouseX, mouseY, 330, 190)
   let dright = dist(mouseX, mouseY, 470, 190)
       if (mouseIsPressed ===  true){
-        if(dleft < 80 && dright > 80){
+        if(dleft < 80){
     earamplitude = earamplitude + speed
         }
-      }else{
+      }
+      if (mouseIsPressed ===  true){
+      if(dright < 80){
+            earamplitude = earamplitude + speed
+
+      }
+      }
+      else{
         if(earamplitude >= 3){
      earamplitude = 3
         }
