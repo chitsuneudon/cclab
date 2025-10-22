@@ -30,7 +30,8 @@ let earamplitude = 3
 
 function setup() {
   
-  createCanvas(800, 500);
+  let canvas = createCanvas(800, 500);
+  canvas.parent("p5-canvas-container");
   // fill(255, 0 , 0)
   // circle(0, 0, 5)
   // circle(20, -30, 5)
